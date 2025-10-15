@@ -1,102 +1,239 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UpScale - Contact</title>
-  <link rel="stylesheet" href="css/ContactUs.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-</head>
-<body>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- ===== HEADER ===== -->
-  <header class="header">
-    <a href="index.html" class="logo">
-      <img src="images/logo.png" alt="UpScale AI Logo" class="logo-img" />
-      <span class="brand-name">UpScale</span>
-    </a>
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
 
-    <nav class="nav-center">
-      <a href="index.html#home">Home</a>
-      <a href="index.html#how-it-works">Services</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  height: 70px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    <div class="header-right">
-      <a href="contact.html" class="demo-button">Book a Demo</a>
-    </div>
-  </header>
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #333;
+}
 
-  <!-- HERO -->
-  <section class="contact-hero fade-in">
-    <h1>Start growing your business with predictable leads</h1>
-    <p>Fill out the form below and our growth team will contact you within one business day</p>
-  </section>
+.logo-img {
+  height: 45px;
+  width: auto;
+}
 
-  <!-- CONTACT BOXES -->
-  <main>
-    <div class="contact-boxes">
+.brand-name {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
 
-      <!-- FORM BOX -->
-      <div class="box form-box">
-        <h2>Contact Form</h2>
-        <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="c9980097-d60b-4fbe-b630-58d429613e64">
-          <input type="text" name="name" placeholder="First Name" required>
-          <input type="text" name="lastname" placeholder="Last Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="tel" name="phone" placeholder="Phone Number" required>
-          <textarea name="Message" placeholder="Message" rows="6" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
+.nav-center {
+  display: flex;
+  gap: 30px;
+}
 
-      <!-- RIGHT SIDE SMALL BOXES -->
-      <div class="right-side-boxes">
+.nav-center a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: 0.3s;
+}
 
-        <!-- GET IN TOUCH BOX -->
-        <div class="box small-box get-in-touch-box">
-          <h2>Get in Touch</h2>
-          <ul>
-            <li><strong>Email:</strong> <i class="fas fa-envelope"></i> upscalemt@gmail.com</li>
-            <li><strong>Phone:</strong> <i class="fas fa-phone"></i> +356 7950 0606</li>
-            <li><strong>Location:</strong> <i class="fas fa-location-dot"></i> Malta</li>
-          </ul>
-        </div>
+.nav-center a:hover {
+  color: #2E8BC0;
+}
 
-        <!-- CONTACT INFO BOX -->
-        <div class="box small-box contact-info-box">
-          <h2>Contact Info</h2>
-          <p>Our growth team is ready to answer your questions. Reach out to us via email or phone.</p>
-        </div>
+.demo-button {
+  background: #1149e4;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
 
-      </div>
+.demo-button:hover {
+  background: #1465df;
+  box-shadow: 0 4px 10px rgba(17, 73, 228, 0.3);
+}
 
-    </div>
-  </main>
+/* HERO */
+.contact-hero {
+  text-align: center;
+  padding: 60px 10%;
+  background-color: #eaf2fb;
+}
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-brand">
-      <h3>UpScale</h3>
-    </div>
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul class="no-bullets">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#how-it-works">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <ul>
-        <li>Email: upscalemt@gmail.com</li>
-        <li>Phone: +356 7950 0606</li>
-        <li>Location: Malta</li>
-      </ul>
-    </div>
-  </footer>
+.contact-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #1c1c1c;
+}
 
-</body>
-</html>
+.contact-hero p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* CONTACT BOXES */
+.contact-boxes {
+  display: flex;
+  gap: 30px;
+  padding: 50px 10%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* FORM BOX */
+.form-box {
+  flex: 2;
+  min-width: 300px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.form-box form input,
+.form-box form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-box form textarea {
+  resize: vertical;
+}
+
+.form-box form button {
+  background-color: #1149e4;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-box form button:hover {
+  background-color: #1465df;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(85,184,241,0.3);
+}
+
+/* RIGHT SIDE SMALL BOXES */
+.right-side-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 180px;
+}
+
+/* SMALL BOXES */
+.small-box {
+  background-color: #f1f6fc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* GET IN TOUCH BOX */
+.get-in-touch-box ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.get-in-touch-box li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.get-in-touch-box i {
+  color: #2E8BC0;
+}
+
+/* CONTACT INFO BOX */
+.contact-info-box p {
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 40px 10%;
+  background-color: #1c1c1c;
+  color: #eee;
+  gap: 20px;
+}
+
+.footer a {
+  color: #eee;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #2E8BC0;
+}
+
+.footer-links ul.no-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+  .contact-boxes {
+    flex-direction: column;
+    padding: 30px 5%;
+  }
+
+  .right-side-boxes {
+    flex-direction: column;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
